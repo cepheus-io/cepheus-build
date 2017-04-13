@@ -23,12 +23,10 @@
 set -e
 
 if [[ -f /etc/redhat-release ]]; then
-    yum install -y kernel-devel-`uname -r` gcc make perl bzip2
-    yum install -y epel-release rsync vim git wget curl
-    yum install -y python-pip python-jinja2 PyYAML
-    yum install -y ipmitool yum-utils createrepo ntp tmux
-else
-
+    sudo yum install -y kernel-devel-`uname -r` gcc make perl bzip2
+    sudo yum install -y epel-release rsync vim git wget curl
+    sudo yum install -y python-pip python-jinja2 PyYAML
+    sudo yum install -y ipmitool yum-utils createrepo ntp tmux
 fi
 
 git clone https://github.com/cepheus-io/cepheus /tmp/cepheus
