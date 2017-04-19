@@ -7,15 +7,15 @@ To launch do the following:
 >Login to the node that will be your `bootstrap` node with `sudo` rights
 
 
-Step 1 (install git): (if your node already has git installed then skip to Step 2)
+**Step 1 (install git):** (if your node already has git installed then skip to Step 2)
 
->Redhat/CentOS:
+>**Redhat/CentOS:**
 >
->sudo yum install git
+>sudo yum install -y git
 >>
->Ubuntu:
+>**Ubuntu:**
 >
->sudo apt install git
+>sudo apt install -y git
 >
 >Setup git credentials (optional for public repos):
 >
@@ -23,11 +23,11 @@ Step 1 (install git): (if your node already has git installed then skip to Step 
 >
 >git config --global user.name "Your Name"
 
-Step 2 (install this repo):
+**Step 2 (install this repo):**
 
 >git clone https://github.com/cepheus-io/cepheus-build
 
-Step 3 (start build):
-This step will install the needed dependencies, git clone `cepheus` to 
+**Step 3 (start build):**
+This step will install the needed dependencies, git clone `cepheus` to
 
 >./cepheus-build/cepheus-build.sh
