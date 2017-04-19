@@ -30,8 +30,17 @@ if [[ -f /etc/redhat-release ]]; then
     sudo yum install -y ipmitool yum-utils createrepo ntp tmux
 fi
 
-echo "====> Cloning Cepheus..."
+echo "====> Cloning Cepheus and data files..."
+echo
 git clone https://github.com/cepheus-io/cepheus /tmp/cepheus
+
+
+# IMPORTANT!!!
+# clone the "private" layers (if any)
+# clone the data layers
+# copy over the layers in proper order to /tmp/cepheus
+# remove the "private" and data layers
+
 
 # Could add a parameter option to allow for install only or build.
 # Currently it's build
