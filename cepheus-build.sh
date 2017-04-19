@@ -23,10 +23,20 @@
 set -e
 
 if [[ -f /etc/redhat-release ]]; then
-    sudo yum install -y kernel-devel-`uname -r` gcc make perl bzip2
+    echo "====> Installing required packages..."
+    sudo yum install -y kernel-devel gcc make perl bzip2
     sudo yum install -y epel-release rsync vim git wget curl
     sudo yum install -y python-pip python-jinja2 PyYAML
     sudo yum install -y ipmitool yum-utils createrepo ntp tmux
 fi
 
+echo "====> Cloning Cepheus..."
 git clone https://github.com/cepheus-io/cepheus /tmp/cepheus
+
+# Could add a parameter option to allow for install only or build.
+# Currently it's build
+
+cd /tmp/cepheus
+
+echo "====> Building Cepheus..."
+./CEPH_UP -u 0
