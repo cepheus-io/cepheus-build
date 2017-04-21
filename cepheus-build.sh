@@ -32,8 +32,12 @@ fi
 
 echo "====> Cloning Cepheus and data files..."
 echo
-git clone https://github.com/cepheus-io/cepheus /tmp/cepheus
 
+if [[ -d /tmp/cepheus ]]; then
+    rm -rf /tmp/cepheus
+fi
+
+git clone https://github.com/cepheus-io/cepheus /tmp/cepheus
 
 # IMPORTANT!!!
 # clone the "private" layers (if any)
