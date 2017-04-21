@@ -20,6 +20,8 @@
 # NB: The initial bootstrap process: Chef Server and Chef Clients are installed and setup along with everything else.
 # NB: Setup sudoers, users, dependencies needed for Chef and Ansible etc...
 
+# IMPORTANT - This process may wipe out any existing Cepheus directories and start over!! Becareful if not sure!
+
 set -e
 
 if [[ -f /etc/redhat-release ]]; then
@@ -51,5 +53,8 @@ git clone https://github.com/cepheus-io/cepheus /tmp/cepheus
 
 cd /tmp/cepheus
 
-echo "====> Building Cepheus..."
+echo "====> Bootstrap Initial Cepheus..."
+./CEPH_UP -b
+
+echo "====> Update Cepheus..."
 ./CEPH_UP -u 0
