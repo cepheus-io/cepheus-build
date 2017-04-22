@@ -71,7 +71,7 @@ echo -e "${RED}====> Bootstrap Initial Cepheus...${NC}"
 # -b bootstrap build
 ./CEPH_UP -b
 
-echo -e "${YELLOW}====> Update Cepheus...${NC}"
+echo -e "${YELLOW}====> Update Cepheus (-cepheus-build-)...${NC}"
 cd $HOME/cepheus
 # -x suppress logo, -u 0 update
 ./CEPH_UP -x -u 0
