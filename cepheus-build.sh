@@ -38,6 +38,9 @@ NC='\033[0m' # No Color
 
 set -e
 
+BOOTSTRAP_ONLY=$1
+BOOTSTRAP_ONLY=${BOOTSTRAP_ONLY:-0}
+
 if [[ -f /etc/redhat-release ]]; then
     echo "====> Installing required packages..."
     sudo yum install -y kernel-devel gcc make perl bzip2
@@ -71,10 +74,12 @@ echo -e "${RED}====> Bootstrap Initial Cepheus...${NC}"
 # -b bootstrap build
 ./CEPH_UP -b
 
-echo -e "${YELLOW}====> Update Cepheus (-cepheus-build-)...${NC}"
-if [[ ! -d $HOME/cepheus ]]; then
-    git clone https://github.com/cepheus-io/cepheus $HOME/cepheus
+if [[ $BOOTSTRAP_ONLY -eq 0 ]]; then
+    echo -e "${YELLOW}====> Update Cepheus (-cepheus-build-)...${NC}"
+    if [[ ! -d $HOME/cepheus ]]; then
+        git clone https://github.com/cepheus-io/cepheus $HOME/cepheus
+    fi
+    cd $HOME/cepheus
+    # -x suppress logo, -u 0 update
+    ./CEPH_UP -x -u 0
 fi
-cd $HOME/cepheus
-# -x suppress logo, -u 0 update
-./CEPH_UP -x -u 0
