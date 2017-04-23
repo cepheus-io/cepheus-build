@@ -83,3 +83,9 @@ if [[ $BOOTSTRAP_ONLY -eq 0 ]]; then
     # -x suppress logo, -u 0 update
     ./CEPH_UP -x -u 0
 fi
+
+echo
+echo -e "${GREEN}====> Clean build templates...${NC}"
+echo
+cd $HOME/cepheus
+./CEPH_UP -x -z $HOME/cepheus
