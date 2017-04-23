@@ -26,6 +26,10 @@ To launch do the following:
 **Step 2 (install this repo):**
 
 >git clone https://github.com/cepheus-io/cepheus-build
+>
+> **OR** (combine Step 2 and Step 3)
+>
+>git clone https://github.com/cepheus-io/cepheus-build && ./cepheus-build/cepheus-build.sh
 
 **Step 3 (start build):**
 This step will install the needed dependencies, git clone `cepheus` to /tmp/cepheus and then launch `./CEPH_UP -u 0` which will start the build process.
