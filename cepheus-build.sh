@@ -45,7 +45,7 @@ if [[ -f /etc/redhat-release ]]; then
     echo "====> Installing required packages..."
     sudo yum install -y kernel-devel gcc make perl bzip2
     sudo yum install -y epel-release rsync vim git wget curl
-    sudo yum install -y python-pip python-jinja2 PyYAML
+    sudo yum install -y python-pip python-jinja2 PyYAML ansible
     sudo yum install -y ipmitool yum-utils createrepo ntp tmux
 fi
 
