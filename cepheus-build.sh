@@ -64,6 +64,10 @@ git clone https://github.com/cepheus-io/cepheus /tmp/cepheus
 # copy over the layers in proper order to /tmp/cepheus
 # remove the "private" and data layers
 
+# Go ahead and get rid of the directory so if something fails it can cleanly start over...
+if [[ -d $HOME/cepheus-build ]]; then
+    rm -rf $HOME/cepheus-build
+fi
 
 # Could add a parameter option to allow for install only or build.
 # Currently it's build
