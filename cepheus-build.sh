@@ -88,6 +88,20 @@ if [[ $BOOTSTRAP_ONLY -eq 0 ]]; then
     ./CEPH_UP -x -u 0
 fi
 
+
+# Should only have ceph-files.tar.gz in home of primary user so remove it for clean up.
+echo -e "${YELLOW}====> Cleaning up <==== ${NC}"
+cd $HOME
+rm -f *.tar.gz
+cd $HOME/cepheus
+rm -rf .git
+rm .gitignore
+rm .kitchen.yml
+rm .editorconfig
+
+# This should only be called once!
+$HOME/cepheus/bootstrap/common/bootstrap_ceph.sh
+
 echo
 echo -e "${GREEN}====> Cepheus-Build Process - Complete! <==== ${NC}"
 echo
