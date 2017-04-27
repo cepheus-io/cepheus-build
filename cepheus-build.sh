@@ -89,7 +89,5 @@ if [[ $BOOTSTRAP_ONLY -eq 0 ]]; then
 fi
 
 echo
-echo -e "${GREEN}====> Clean build templates...${NC}"
+echo -e "${GREEN}====> Cepheus-Build Process - Complete! <==== ${NC}"
 echo
-cd $HOME/cepheus
-./CEPH_UP -x -z $HOME/cepheus
