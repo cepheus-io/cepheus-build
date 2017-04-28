@@ -38,6 +38,23 @@ NC='\033[0m' # No Color
 
 set -e
 
+# Check to make sure Cepheus is not already setup. If so then bail.
+CEPHEUS_CONTINUE=1
+
+for chk in "/ceph-host" "/ceph-files" "$HOME/cepheus"; do
+    if [[ -d $chk ]]; then
+        CEPHEUS_CONTINUE=0
+        break
+    fi
+done
+
+if [[ $CEPHEUS_CONTINUE -ne 1 ]]; then
+    echo
+    echo -e "${RED}====> Cepheus already setup! <====${NC}"
+    echo
+    exit 1
+fi
+
 BOOTSTRAP_ONLY=$1
 BOOTSTRAP_ONLY=${BOOTSTRAP_ONLY:-0}
 
