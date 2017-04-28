@@ -49,6 +49,9 @@ for chk in "/ceph-host" "/ceph-files" "$HOME/cepheus"; do
 done
 
 if [[ $CEPHEUS_CONTINUE -ne 1 ]]; then
+    if [[ -d $HOME/cepheus-build ]]; then
+        rm -rf $HOME/cepheus-build
+    fi
     echo
     echo -e "${RED}====> Cepheus already setup! <====${NC}"
     echo
