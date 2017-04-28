@@ -78,7 +78,7 @@ echo -e "${RED}====> Bootstrap Initial Cepheus...${NC}"
 # -b bootstrap build
 ./CEPH_UP -b
 
-if [[ $BOOTSTRAP_ONLY -eq 0 ]]; then
+# if [[ $BOOTSTRAP_ONLY -eq 0 ]]; then
     echo -e "${YELLOW}====> Update Cepheus (-cepheus-build-)...${NC}"
     if [[ ! -d $HOME/cepheus ]]; then
         git clone https://github.com/cepheus-io/cepheus $HOME/cepheus
@@ -86,7 +86,7 @@ if [[ $BOOTSTRAP_ONLY -eq 0 ]]; then
     cd $HOME/cepheus
     # -x suppress logo, -u 0 update
     ./CEPH_UP -x -u 0
-fi
+# fi
 
 
 # Should only have ceph-files.tar.gz in home of primary user so remove it for clean up.
@@ -103,5 +103,7 @@ rm .editorconfig
 $HOME/cepheus/bootstrap/common/bootstrap_ceph.sh
 
 echo
-echo -e "${GREEN}====> Cepheus-Build Process - Complete! <==== ${NC}"
+echo -e "${RED}=============================================${NC}"
+echo -e "${GREEN}====> Cepheus-Build Process - Complete! <====${NC}"
+echo -e "${RED}=============================================${NC}"
 echo
