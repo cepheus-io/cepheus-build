@@ -120,7 +120,7 @@ rm .kitchen.yml
 rm .editorconfig
 
 # This should only be called once!
-$HOME/cepheus/bootstrap/common/bootstrap_ceph.sh
+# $HOME/cepheus/bootstrap/common/bootstrap_ceph.sh
 
 echo
 echo -e "${RED}=============================================${NC}"
