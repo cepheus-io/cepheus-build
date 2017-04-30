@@ -124,7 +124,7 @@ rm .editorconfig
 $HOME/cepheus/bootstrap/common/bootstrap_ceph.sh
 
 echo
-echo -e "${RED}=============================================${NC}"
-echo -e "${GREEN}====> Cepheus-Build Process - Complete! <====${NC}"
-echo -e "${RED}=============================================${NC}"
+echo -e "${RED}=============================================================${NC}"
+echo -e "${GREEN}====> Cepheus-Build Process - Complete in $SECONDS seconds! <====${NC}"
+echo -e "${RED}=============================================================${NC}"
 echo
