@@ -95,8 +95,8 @@ fi
 cd /tmp/cepheus
 
 echo -e "${RED}====> Bootstrap Initial Cepheus...${NC}"
-# -b bootstrap build
-./CEPH_UP -b 
+# -b bootstrap build, -p get the prerequisites. There needs to be another way too.
+./CEPH_UP -b -p
 
 # If bootstrapping only then skip this section...
 if [[ $BOOTSTRAP_ONLY -eq 0 ]]; then
