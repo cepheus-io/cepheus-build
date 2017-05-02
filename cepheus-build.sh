@@ -41,12 +41,11 @@ set -e
 # Check to make sure Cepheus is not already setup. If so then bail.
 CEPHEUS_CONTINUE=1
 
-for chk in "/ceph-host" "/ceph-files" "$HOME/cepheus"; do
-    if [[ -d $chk ]]; then
-        CEPHEUS_CONTINUE=0
-        break
-    fi
-done
+# If ALL of the primary directories are present then it's assumed 
+if [[ -d "/ceph-host" && -d "/ceph-files" && -d "$HOME/cepheus" ]]; then
+    CEPHEUS_CONTINUE=0
+fi
+
 
 if [[ $CEPHEUS_CONTINUE -ne 1 ]]; then
     if [[ -d $HOME/cepheus-build ]]; then
